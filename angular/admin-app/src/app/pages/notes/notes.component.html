@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1><strong>Your Notes</strong></h1>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mt-3" *ngFor="let note of (notes$ | async)">
+      <app-notes-card [title]="note.title.toString()" [content]="note.content.toString()"
+        [date]="note.timestamp.toString()"></app-notes-card>
+    </div>
+    <div class="col-md-3 mt-2" *ngIf="showCreateNote" >
+      <app-notes-card [mode]="'create'" (note)="addNotes($event)"></app-notes-card>
+    </div>
+    <div class="col-md-1">
+      <button class="btn btn-light btn-lg" (click)="onAddNoteClicked()">{{showCreateNote ? "X" : "Add Notes"}}</button>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,19 @@
+<app-card>
+    <ng-container *ngIf="mode === 'view'; then view; else create "></ng-container>
+    <ng-template #view>
+        <div class="row">
+            <div class="col-md-5">title: {{title}} </div>
+            <div class="col-md-5">time: {{date}}</div>
+            <div class="col-md-12">content: {{content}}</div>
+        </div>
+    </ng-template>
+    <ng-template #create>
+        <div class="form-group col-md-12 p-3" >
+            <label>Title:</label>
+            <input class="form-control" [(ngModel)]="title" /><br>
+            <label>Content:</label>
+            <textarea class="form-control" [(ngModel)]="content"></textarea>
+            <button class="btn btn-primary mt-3" (click)="onSave()">Save Note</button>
+        </div>
+    </ng-template>
+</app-card>

@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - /Users/ajaysankaran/Desktop/code/db/mongo:/data/db
+    restart: unless-stopped
+
+  redis:
+    image: redis/redis-stack
+    ports:
+      - '6379:6379'
+    volumes:
+      - /Users/ajaysankaran/Desktop/code/db/redis:/root/redis
+    # command: redis-server --appendonly yes
+    environment:
+      - REDIS_PASSWORD=my-password
+      - REDIS_PORT=6379
+      - REDIS_DATABASES=16
