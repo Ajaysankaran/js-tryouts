@@ -8,7 +8,7 @@ const options = {
     method: 'GET',
     headers: {
         "Content-Type": "application/json",
-        'X-RapidAPI-Key': '95cb3b9057msh79dc7aca88de24bp103eeajsn8c3c81459fab',
+        'X-RapidAPI-Key': '<<API_KEY>>',
         'X-RapidAPI-Host': 'livescore6.p.rapidapi.com'
     }
 };
